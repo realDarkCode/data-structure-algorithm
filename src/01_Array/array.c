@@ -46,7 +46,7 @@ extern void inputValueArray(struct array *arr)
 }
 
 // setting default values to our custom array
-extern void defaultValue(struct array *arr)
+extern void fillArray(struct array *arr)
 {
     for (size_t i = 0; i < arr->used_size; i++)
     {
@@ -68,7 +68,6 @@ extern int insertElement(struct array *arr, int element, int index)
     }
     for (int i = arr->used_size - 1; i >= index; i--)
     {
-        printf("traversing %d\n", (arr->base_address)[i]);
         (arr->base_address)[i + 1] = (arr->base_address)[i];
     }
     (arr->base_address)[index] = element;
