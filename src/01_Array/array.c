@@ -38,6 +38,14 @@ extern void inputValueArray(struct array *arr)
     }
 }
 
+// setting default values to our custom array
+extern void defaultValue(struct array *arr)
+{
+    for (size_t i = 0; i < arr->used_size; i++)
+    {
+        (arr->base_address)[i] = i + 1;
+    }
+}
 // insertion in array
 extern int insertElement(struct array *arr, int element, int index)
 {
