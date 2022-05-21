@@ -8,12 +8,19 @@ extern struct array
     int *base_address; // used to locate the first element of an array
 } test;
 // set base values to created struct
-extern void createArray(struct array *arr, int tSize, int uSize)
+extern int createArray(struct array *arr, int tSize, int uSize)
 {
+    if (uSize > tSize)
+    {
+        printf("error: used value can't be bigger than array size");
+        return -1;
+    }
+
     (*arr).total_size = tSize;
     // same as arr->total_size = tSize
     (*arr).used_size = uSize;
     (*arr).base_address = (int *)malloc(tSize * sizeof(int));
+    return 0;
 }
 // traversing our custom array
 extern void displayArray(struct array *arr)
