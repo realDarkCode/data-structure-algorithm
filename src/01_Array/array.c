@@ -74,3 +74,22 @@ extern int insertElement(struct array *arr, int element, int index)
     arr->used_size++;
     return 0;
 }
+
+// delete an element at given index
+extern int deleteElementAtIndex(struct array *arr, int index)
+{
+    if (index >= arr->used_size)
+    {
+        printf("error: out of deletion range");
+        return -1;
+    }
+
+    for (size_t i = index; i < arr->used_size; i++)
+    {
+        (arr->base_address)[i] = (arr->base_address)[i + 1];
+    }
+    arr->used_size--;
+
+    displayArray(arr);
+    return 0;
+}
