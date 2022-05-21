@@ -1,9 +1,15 @@
 #include <stdio.h>
-#include "01_implement_array_as_ADT.c"
+#include "array.c"
 
 int main()
 {
-
-    printf("Hell world\n ");
+    struct array student;
+    createArray(&student, 10, 3);
+    inputValueArray(&student);
+    displayArray(&student);
+    insertElement(&student, 33, 0);
+    insertElement(&student, 99, 3);
+    insertElement(&student, 100, 5);
+    displayArray(&student);
     return 0;
 }

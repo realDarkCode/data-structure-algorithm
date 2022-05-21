@@ -37,3 +37,26 @@ extern void inputValueArray(struct array *arr)
         scanf("%d", &(arr->base_address)[i]);
     }
 }
+
+// insertion in array
+extern int insertElement(struct array *arr, int element, int index)
+{
+    if (arr->used_size >= arr->total_size)
+    {
+        printf("error: The array is already full\n");
+        return -1;
+    }
+    if (index > arr->used_size)
+    {
+        printf("error: invalid index\n");
+        return -1;
+    }
+    for (int i = arr->used_size - 1; i >= index; i--)
+    {
+        printf("traversing %d\n", (arr->base_address)[i]);
+        (arr->base_address)[i + 1] = (arr->base_address)[i];
+    }
+    (arr->base_address)[index] = element;
+    arr->used_size++;
+    return 0;
+}
