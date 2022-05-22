@@ -7,17 +7,12 @@ struct Node
     struct Node *next;
 };
 
-void traverseLinkedList(struct Node *head)
+void traverseLinkedList(struct Node *ptr)
 {
-    struct Node *node = head;
-    while (1)
+    while (ptr != NULL)
     {
-        printf("%d\n", node->data);
-        if (node->next == NULL)
-        {
-            break;
-        }
-        node = node->next;
+        printf("%d\n", ptr->data);
+        ptr = ptr->next;
     }
 }
 int main()
