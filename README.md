@@ -1,17 +1,15 @@
 # Data Structure and Algorithm Practices
+
 ## Introduction
 
 at first, welcome to my personal DSA practice repo. In this repository I will upload my **data structure and algorithm** practice code. I will also try to explain things and concepts.
 
 > I'm just a newbie so please pardon my mistakes
 
-
 # Table of contents
 
 - [Prerequisite](#prerequisite)
 - [Notes](#notes)
-
-
 
 ## Prerequisite
 
@@ -23,7 +21,7 @@ if you want to follow this repo. you must have knowledge about following:
 
 ## Notes
 
-The notes used in this repository are taken from [Code with Harry](https://codewithharry.com/).So huge thanks to him.
+The notes used in this repository are taken from [Code with Harry](https://codewithharry.com/). So huge thanks to him.
 
 [Notes](https://drive.google.com/drive/folders/1-DamhcfieP67Ql4vwNiZ4h4DOfcjYkHj?usp=sharing)
 
