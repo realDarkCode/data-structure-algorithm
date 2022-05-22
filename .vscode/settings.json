@@ -1,0 +1,4 @@
+{
+  "rpc.enabled": false,
+  "C_Cpp.errorSquiggles": "Disabled"
+}
