@@ -1,16 +1,17 @@
 # Data Structure and Algorithm Practices
-
-# Table of contents
-
-- [Introduction](#introduction)
-- [Prerequisite](#prerequisite)
-- [Notes](#notes)
-
 ## Introduction
 
 at first, welcome to my personal DSA practice repo. In this repository I will upload my **data structure and algorithm** practice code. I will also try to explain things and concepts.
 
 > I'm just a newbie so please pardon my mistakes
+
+
+# Table of contents
+
+- [Prerequisite](#prerequisite)
+- [Notes](#notes)
+
+
 
 ## Prerequisite
 
