@@ -32,3 +32,43 @@ extern struct Node *insertAtFirst(struct Node *head, int data)
     ptr->next = head;
     return ptr;
 }
+// Case 2: Insert at given index
+
+extern void insertAtIndex(struct Node *head, int data, int index)
+{
+    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+    struct Node *p = head;
+    int i = 0;
+    while (i != index - 1)
+    {
+        p = p->next;
+        i++;
+    }
+    ptr->data = data;
+    ptr->next = p->next;
+
+    p->next = ptr;
+}
+
+extern void insertAtEnd(struct Node *head, int data)
+{
+    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+
+    struct Node *p = head;
+
+    while (p->next != NULL)
+    {
+        p = p->next;
+    }
+    ptr->data = data;
+    ptr->next = NULL;
+    p->next = ptr;
+}
+
+extern void insertAfter(struct Node *prevNode, int data)
+{
+    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+    ptr->data = data;
+    ptr->next = prevNode->next;
+    prevNode->next = ptr;
+}
