@@ -72,3 +72,38 @@ extern void insertAfter(struct Node *prevNode, int data)
     ptr->next = prevNode->next;
     prevNode->next = ptr;
 }
+
+extern struct Node *deleteFirst(struct Node *head)
+{
+    struct Node *ptr = head;
+    head = head->next;
+    free(ptr);
+    return head;
+}
+
+extern void deleteAtIndex(struct Node *head, int index)
+{
+    struct Node *p = head;
+    int i = 0;
+    while (i < index - 1)
+    {
+        p = p->next;
+        i++;
+    }
+    struct Node *q = p->next;
+    p->next = q->next;
+    free(q);
+}
+
+extern void deleteLast(struct Node *head)
+{
+    struct Node *p = head;
+    struct Node *q = head->next;
+    while (q->next != NULL)
+    {
+        p = p->next;
+        q = q->next;
+    }
+    p->next = NULL;
+    free(q);
+}
