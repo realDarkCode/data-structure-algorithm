@@ -13,7 +13,15 @@ int main()
     assignValue(third, 33, fourth);
     assignValue(fourth, 44, fifth);
     assignValue(fifth, 55, head);
+    printf("Circular Linked list before operations:\n");
+    traverseCircularLinkedList(head);
 
+    head = insertAtFirst(head, 0);
+    head = insertAtFirst(head, 1);
+    head = insertAtFirst(head, 2);
+    head = insertAtFirst(head, 3);
+
+    printf("Circular Linked list after operations:\n");
     traverseCircularLinkedList(head);
     return 0;
 }

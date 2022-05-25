@@ -23,3 +23,19 @@ extern void traverseCircularLinkedList(struct Node *head)
     } while (ptr != head);
     printf("\n");
 }
+
+extern struct Node *insertAtFirst(struct Node *head, int data)
+{
+    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+    ptr->data = data;
+
+    struct Node *p = head->next;
+    while (p->next != head)
+    {
+        p = p->next;
+    }
+    p->next = ptr;
+    ptr->next = head;
+    head = ptr;
+    return head;
+}
