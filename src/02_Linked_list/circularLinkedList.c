@@ -7,10 +7,19 @@ extern struct Node
     struct Node *next;
 } test;
 
-extern struct Node *assignValue(struct Node *node, int data, struct Node *nextNode)
+extern void assignValue(struct Node *node, int data, struct Node *nextNode)
 {
-    node = (struct Node *)malloc(sizeof(struct Node));
     node->data = data;
     node->next = nextNode;
-    return node;
+}
+
+extern void traverseCircularLinkedList(struct Node *head)
+{
+    struct Node *ptr = head;
+    do
+    {
+        printf("%d ", ptr->data);
+        ptr = ptr->next;
+    } while (ptr != head);
+    printf("\n");
 }

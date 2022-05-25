@@ -2,12 +2,18 @@
 
 int main()
 {
-    struct Node *head, *second, *third, *fourth, *fifth;
-    head = assignValue(head, 11, second);
-    second = assignValue(second, 22, third);
-    third = assignValue(third, 33, fourth);
-    fourth = assignValue(fourth, 44, fifth);
-    fifth = assignValue(fifth, 55, head);
+    struct Node *head = (struct Node *)malloc(sizeof(struct Node));
+    struct Node *second = (struct Node *)malloc(sizeof(struct Node));
+    struct Node *third = (struct Node *)malloc(sizeof(struct Node));
+    struct Node *fourth = (struct Node *)malloc(sizeof(struct Node));
+    struct Node *fifth = (struct Node *)malloc(sizeof(struct Node));
 
+    assignValue(head, 11, second);
+    assignValue(second, 22, third);
+    assignValue(third, 33, fourth);
+    assignValue(fourth, 44, fifth);
+    assignValue(fifth, 55, head);
+
+    traverseCircularLinkedList(head);
     return 0;
 }
