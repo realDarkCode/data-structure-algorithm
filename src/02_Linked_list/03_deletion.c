@@ -20,7 +20,7 @@ int main()
     // head = deleteFirst(head);
     // deleteAtIndex(head, 2);
     // deleteLast(head);
-
+    // deleteWith(head, 22);
     printf("after deletion:\n");
     traverseLinkedList(head);
     return 0;

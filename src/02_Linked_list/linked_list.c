@@ -107,3 +107,17 @@ extern void deleteLast(struct Node *head)
     p->next = NULL;
     free(q);
 }
+
+extern void deleteWith(struct Node *head, int value)
+{
+    struct Node *p = head;
+    struct Node *q = head->next;
+
+    while (q->data != value)
+    {
+        p = p->next;
+        q = q->next;
+    }
+    p->next = q->next;
+    free(q);
+}
