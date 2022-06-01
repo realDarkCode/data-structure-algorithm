@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 extern struct STACK
 {
     int size;
@@ -33,7 +32,21 @@ extern int isFull(struct STACK *sPtr)
     }
     return 0;
 }
-
+extern void traverseStack(struct STACK *st)
+{
+    if (isEmpty(st))
+    {
+        printf("Stack-> empty, can't traverse\n");
+    }
+    else
+    {
+        for (size_t i = 0; i <= st->top; i++)
+        {
+            printf("%d ", st->arr[i]);
+        }
+        printf("\n");
+    }
+}
 extern void checkEmptyStatus(struct STACK *sPtr)
 {
     if (isEmpty(sPtr))
@@ -58,13 +71,15 @@ extern void checkFullStatus(struct STACK *sPtr)
 }
 
 // Pushing new elements to Stack
-extern int push(struct STACK *sp, int value)
+extern void push(struct STACK *sp, int value)
 {
     if (isFull(sp))
     {
         printf("Stack Overflow\n");
-        return -1;
     }
-    sp->arr[sp->top++] = value;
-    return 0;
+    else
+    {
+        sp->top++;
+        sp->arr[sp->top] = value;
+    }
 }
