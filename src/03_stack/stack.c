@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+// Stack base structure
 extern struct STACK
 {
     int size;
     int top;
     int *arr;
 } s;
-
+// create a stack using stack pointer and given size
 extern void createStack(struct STACK *st, int size)
 {
 
@@ -14,7 +15,7 @@ extern void createStack(struct STACK *st, int size)
     st->top = -1;
     st->arr = (int *)malloc(sizeof(int) * st->size);
 }
-
+// check if the stack is empty or not
 extern int isEmpty(struct STACK *sPtr)
 {
     if (sPtr->top == -1)
@@ -23,6 +24,7 @@ extern int isEmpty(struct STACK *sPtr)
     }
     return 0;
 }
+// check if the stack is full or not
 
 extern int isFull(struct STACK *sPtr)
 {
@@ -32,6 +34,7 @@ extern int isFull(struct STACK *sPtr)
     }
     return 0;
 }
+// print out all elements in a stack
 extern void traverseStack(struct STACK *st)
 {
     if (isEmpty(st))
@@ -47,6 +50,8 @@ extern void traverseStack(struct STACK *st)
         printf("\n");
     }
 }
+
+// print stack empty status
 extern void checkEmptyStatus(struct STACK *sPtr)
 {
     if (isEmpty(sPtr))
@@ -58,6 +63,8 @@ extern void checkEmptyStatus(struct STACK *sPtr)
         printf("The stack is not empty\n");
     }
 }
+// print stack full status
+
 extern void checkFullStatus(struct STACK *sPtr)
 {
     if (isFull(sPtr))
@@ -98,5 +105,27 @@ extern int pop(struct STACK *sp)
         int value = sp->arr[sp->top];
         sp->top--;
         return value;
+    }
+}
+
+// peak operation: to get any value at stack in given index
+
+extern int peak(struct STACK *sp, int index)
+{
+    int peakIndex = (sp->top - index) + 1;
+    if (peakIndex < 0 || peakIndex > sp->top)
+    {
+        printf("Not a valid postion to peak\n");
+        return -1;
+    }
+    return sp->arr[peakIndex];
+}
+
+// Fill stack with even numbers
+extern void fillsWithEven(struct STACK *sp)
+{
+    for (int i = 0; i < sp->size; i++)
+    {
+        push(sp, i * 2);
     }
 }
