@@ -56,3 +56,15 @@ extern void checkFullStatus(struct STACK *sPtr)
         printf("The stack is not full\n");
     }
 }
+
+// Pushing new elements to Stack
+extern int push(struct STACK *sp, int value)
+{
+    if (isFull(sp))
+    {
+        printf("Stack Overflow\n");
+        return -1;
+    }
+    sp->arr[sp->top++] = value;
+    return 0;
+}
