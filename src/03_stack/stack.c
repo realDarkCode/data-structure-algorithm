@@ -83,3 +83,20 @@ extern void push(struct STACK *sp, int value)
         sp->arr[sp->top] = value;
     }
 }
+
+// pop the last element in stack and return it
+
+extern int pop(struct STACK *sp)
+{
+    if (isEmpty(sp))
+    {
+        printf("Stack Underflow\n");
+        return -1;
+    }
+    else
+    {
+        int value = sp->arr[sp->top];
+        sp->top--;
+        return value;
+    }
+}
