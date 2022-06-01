@@ -129,3 +129,15 @@ extern void fillsWithEven(struct STACK *sp)
         push(sp, i * 2);
     }
 }
+
+// return top most element of a stack
+extern int stackTop(struct STACK *sp)
+{
+    return sp->top < 0 ? -1 : sp->arr[sp->top];
+}
+
+// return bottom most element of an stack
+extern int stackBottom(struct STACK *sp)
+{
+    return sp->top < 0 ? -1 : sp->arr[0];
+}
