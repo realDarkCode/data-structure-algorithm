@@ -1,59 +1,74 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct node
+struct Node
 {
     int data;
-    struct node *next;
+    struct Node *next;
 };
 
-// check if the top most element has any value
-int isEmpty(struct node *top)
+void linkedListTraversal(struct Node *ptr)
+{
+    while (ptr != NULL)
+    {
+        printf("Element: %d\n", ptr->data);
+        ptr = ptr->next;
+    }
+}
+
+int isEmpty(struct Node *top)
 {
     if (top == NULL)
     {
         return 1;
     }
-    return 0;
+    else
+    {
+        return 0;
+    }
 }
-// try to create another node to check if there is any available space in heap
-int isFull()
+
+int isFull(struct Node *top)
 {
-    struct node *n = (struct node *)malloc(sizeof(struct node));
-    if (n == NULL)
+    struct Node *p = (struct Node *)malloc(sizeof(struct Node));
+    if (p == NULL)
     {
         return 1;
     }
-    return 0;
+    else
+    {
+        return 0;
+    }
 }
 
-void push(struct node *top, int value)
+struct Node *push(struct Node *top, int x)
 {
-    struct node *n = (struct node *)malloc(sizeof(struct node));
-    if (n == NULL)
+    if (isFull(top))
     {
-        printf("Stack Overflow")
+        printf("Stack Overflow\n");
     }
     else
     {
-        n->data = value;
+        struct Node *n = (struct Node *)malloc(sizeof(struct Node));
+        n->data = x;
         n->next = top;
         top = n;
+        return top;
     }
 }
 
-int pop(struct node *top)
+int pop(struct Node **top)
 {
-    if (isEmpty(top))
+    if (isEmpty(*top))
     {
-        printf("Stack Underflow");
+        printf("Stack Underflow\n");
     }
     else
     {
-        struct node *n = (struct node *)malloc(sizeof(struct node));
-        int topValue = top->data;
-        top = top->next;
-        return topValue;
+        struct Node *n = *top;
+        *top = (*top)->next;
+        int x = n->data;
         free(n);
+        return x;
     }
 }
