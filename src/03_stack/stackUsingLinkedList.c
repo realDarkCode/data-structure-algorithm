@@ -72,3 +72,30 @@ int pop(struct Node **top)
         return x;
     }
 }
+
+int peak(struct Node *top, int position)
+{
+    struct Node *ptr = top;
+    for (int i = 0; (i < position - 1 && ptr != NULL); i++)
+    {
+        ptr = ptr->next;
+    }
+    if (ptr != NULL)
+    {
+        return ptr->data;
+    }
+    else
+    {
+        printf("invalid Postion to peak\n");
+        return -1;
+    }
+}
+int stackTop(struct Node *top)
+{
+    if (top == NULL)
+    {
+        return -1;
+    }
+
+    return top->data;
+}
